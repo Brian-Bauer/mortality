@@ -4,7 +4,7 @@
 mortality <- function(input){
   #input can either be csv file or data	
   newdata <- if(is.character(input) && file.exists(input)){
-    read.csv(input)
+    read.csv(input, na.strings=c('.', 'NA', '', '?'), header=TRUE, sep=',', encoding='UTF-8')
   } else {
     as.data.frame(input)
   }
