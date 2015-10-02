@@ -22,4 +22,4 @@ mortality <- function(input){
   write.csv(newdata, file='~/RStudio/mortality/results/test3.csv', row.names=TRUE)
   return(newdata)
 
-  }
+}
