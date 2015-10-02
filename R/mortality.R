@@ -17,7 +17,8 @@ mortality <- function(input){
   ##newdata$tv <- as.vector(predict.gam(tv_model, newdata = newdata))
   ##crs$pr <- predict(mortality_model, crs$testset[,c(crs$input)], type='class')
   # Read a dataset from file for testing the model.
-  testset <- read.csv('~/RStudio/mortality/data/ExportFile.csv', na.strings=c('.', 'NA', '', '?'), header=TRUE, sep=',', encoding='UTF-8')
-  newdata$pr <- as.vector(predict(mortality_model, testset[,c(newdata)], type='class'))  
+  crs$input <- c('enum', 't.start', 't.stop', 'time','event', 'chemo', 'sex', 'dukes','charlson')
+  ##testset <- read.csv('~/RStudio/mortality/data/ExportFile.csv', na.strings=c('.', 'NA', '', '?'), header=TRUE, sep=',', encoding='UTF-8')
+  newdata$pr <- predict(mortality_model, newdata = newdata[,c(crs$input)], type=c("class"))
   return(newdata)
 }
