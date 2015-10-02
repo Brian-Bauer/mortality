@@ -10,16 +10,12 @@ mortality <- function(input){
   }
   ##stopifnot("age" %in% names(newdata))
   ##stopifnot("marital" %in% names(newdata))
-  
   ##newdata$age <- as.numeric(newdata$age)
 
   #mortality_model is included with the package
-  ##newdata$tv <- as.vector(predict.gam(tv_model, newdata = newdata))
-  ##crs$pr <- predict(mortality_model, crs$testset[,c(crs$input)], type='class')
-  # Read a dataset from file for testing the model.
   input <- c('enum', 't.start', 't.stop', 'time','event', 'chemo', 'sex', 'dukes','charlson')
   write.csv(newdata, file='~/RStudio/mortality/results/test2.csv', row.names=TRUE)
-  ##testset <- read.csv('~/RStudio/mortality/data/ExportFile.csv', na.strings=c('.', 'NA', '', '?'), header=TRUE, sep=',', encoding='UTF-8')
+  #join the predicted mortality - "pr" - to the original data being scored
   newdata$pr <- as.vector(predict(mortality_model, newdata[,c(input)], type='class'))
   write.csv(newdata, file='~/RStudio/mortality/results/test3.csv', row.names=TRUE)
   return(newdata)
