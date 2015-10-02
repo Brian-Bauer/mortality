@@ -16,10 +16,10 @@ mortality <- function(input){
 
   #mortality_model is included with the package
   input <- c('enum', 't.start', 't.stop', 'time','event', 'chemo', 'sex', 'dukes','charlson')
-  write.csv(newdata, file='~/RStudio/mortality/results/test2.csv', row.names=TRUE)
+  ##write.csv(newdata, file='~/RStudio/mortality/results/test2.csv', row.names=TRUE)
   #join the predicted mortality - "pr" - to the original data being scored
   newdata$pr <- as.vector(predict(mortality_model, newdata[,c(input)], type='class'))
-  write.csv(newdata, file='~/RStudio/mortality/results/test3.csv', row.names=TRUE)
+  ##write.csv(newdata, file='~/RStudio/mortality/results/test3.csv', row.names=TRUE)
   return(newdata)
 
 }
