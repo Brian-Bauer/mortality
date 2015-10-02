@@ -26,8 +26,8 @@ crs$weights <- NULL
 require(rpart, quietly=TRUE)
 # Reset the random number seed to obtain the same results each time.
 set.seed(crv$seed)
-# Read a dataset from file for testing the model.
-crs$testset <- read.csv('~/RStudio/mortality/data/ExportFile.csv', na.strings=c('.', 'NA', '', '?'), header=TRUE, sep=',', encoding='UTF-8')
+## Read a dataset from file for testing the model.
+##crs$testset <- read.csv('~/RStudio/mortality/data/ExportFile.csv', na.strings=c('.', 'NA', '', '?'), header=TRUE, sep=',', encoding='UTF-8')
 # Build the Decision Tree model.
 ##crs$rpart <- rpart(death ~ ., data=crs$dataset[, c(crs$input, crs$target)], method='class', parms=list(split='information'), control=rpart.control(usesurrogate=0, maxsurrogate=0))
 mortality_model <- rpart(death ~ ., data=crs$dataset[, c(crs$input, crs$target)], method='class', parms=list(split='information'), control=rpart.control(usesurrogate=0, maxsurrogate=0))
