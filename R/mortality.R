@@ -19,5 +19,9 @@ mortality <- function(input){
   #join the predicted mortality - "pr" - to the original data being scored
   newdata$pr <- as.vector(predict(mortality_model, newdata[,c(input)], type='class'))
   ##write.csv(newdata, file='~/RStudio/mortality/results/test3.csv', row.names=TRUE)
+  png('R_Score_Plot_1.png')
+  plot(mortality_model)
+  text(mortality_model, use.n=TRUE)
+  title(main='Decision Tree', sub=format(Sys.time(), '%a %b %d %X %Y'), col.main='blue', col.sub='black', line='2', font.main=4, font.sub=3)
   return(newdata)
 }
