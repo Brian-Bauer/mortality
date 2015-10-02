@@ -2,6 +2,7 @@
 #' 
 #' @export
 mortality <- function(input){
+  
   #input can either be csv file or data	
   newdata <- if(is.character(input) && file.exists(input)){
     read.csv(input, na.strings=c('.', 'NA', '', '?'), header=TRUE, sep=',', encoding='UTF-8')
@@ -20,4 +21,5 @@ mortality <- function(input){
   newdata$pr <- as.vector(predict(mortality_model, newdata[,c(input)], type='class'))
   write.csv(newdata, file='~/RStudio/mortality/results/test3.csv', row.names=TRUE)
   return(newdata)
-}
+
+  }
