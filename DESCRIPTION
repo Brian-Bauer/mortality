@@ -1,0 +1,11 @@
+Package: mortality
+Type: Package
+Title: Score data to predict mortality
+Version: 0.1
+Date: 2015-10-01
+Author: Brian Bauer
+Maintainer: Brian Bauer <QlikBrianB+github@gmail.com>
+Description: Example OpenCPU app to score data
+License: MIT
+LazyData: false
+Depends: R (>= 2.10)

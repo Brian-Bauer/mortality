@@ -1,9 +1,9 @@
-library(rattle)
+#library(rattle)
 building <- TRUE
 scoring  <- ! building
 
 # The colorspace package is used to generate the colours used in plots, if available.
-library(colorspace)
+#library(colorspace)
 # A pre-defined value is used to reset the random seed so that results are repeatable.
 crv$seed <- 42
 
