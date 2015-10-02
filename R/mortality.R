@@ -19,6 +19,6 @@ mortality <- function(input){
   # Read a dataset from file for testing the model.
   crs$input <- c('enum', 't.start', 't.stop', 'time','event', 'chemo', 'sex', 'dukes','charlson')
   ##testset <- read.csv('~/RStudio/mortality/data/ExportFile.csv', na.strings=c('.', 'NA', '', '?'), header=TRUE, sep=',', encoding='UTF-8')
-  newdata$pr <- predict(mortality_model, newdata = newdata[,c(crs$input)], type=c("class"))
+  ##newdata$pr <- predict(mortality_model, newdata = newdata[,c(crs$input)], type=c("class"))
   return(newdata)
 }
