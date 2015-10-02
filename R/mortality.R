@@ -20,6 +20,7 @@ mortality <- function(input){
   input <- c('enum', 't.start', 't.stop', 'time','event', 'chemo', 'sex', 'dukes','charlson')
   write.csv(newdata, file='~/RStudio/mortality/results/test2.csv', row.names=TRUE)
   ##testset <- read.csv('~/RStudio/mortality/data/ExportFile.csv', na.strings=c('.', 'NA', '', '?'), header=TRUE, sep=',', encoding='UTF-8')
-  ##newdata$pr <- as.vector(predict(mortality_model, newdata[,c(input)], type='class'))
+  newdata$pr <- as.vector(predict(mortality_model, newdata[,c(input)], type='class'))
+  write.csv(newdata, file='~/RStudio/mortality/results/test3.csv', row.names=TRUE)
   return(newdata)
 }
