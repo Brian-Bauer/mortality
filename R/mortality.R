@@ -8,6 +8,7 @@ mortality <- function(input){
   } else {
     as.data.frame(input)
   }
+  
   ##stopifnot("age" %in% names(newdata))
   ##stopifnot("marital" %in% names(newdata))
   ##newdata$age <- as.numeric(newdata$age)
